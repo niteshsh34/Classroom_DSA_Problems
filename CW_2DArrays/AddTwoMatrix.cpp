@@ -3,7 +3,7 @@ using namespace std;
 int main(){
     int m,n;
     cout<<"Enter row and columns :- ";
-    cin>>m>>n;
+    cin>>m>>n; //size
     //Matrix1
     int arr1[m][n];
     cout<<"Enter elements:- ";
