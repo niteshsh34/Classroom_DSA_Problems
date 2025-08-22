@@ -60,6 +60,23 @@ void printList(Node* head) {
     }
     cout << "NULL\n";
 }
+void deletion(Node* &head, Node* &tail, int pos){
+    if(pos == 1){
+        Node * del = head;
+        head = head->next;
+        del->next = NULL;
+    }else{
+    Node* temp = head;
+    int count = 1;
+    while(temp != NULL && count < pos -1){
+        temp = temp->next;
+        count++;
+    }
+    Node* forward = temp->next;
+    temp->next = temp->next->next;
+    forward->next = NULL;
+}
+}
 
 int main() {
     Node* head = NULL;
@@ -72,6 +89,7 @@ int main() {
     
     insertAtM(head, 99, 2);
     printList(head);
-
+    deletion(head,tail,1);
+    printList(head);
     return 0;
 }
